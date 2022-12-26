@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Messege me</string>
+    <string name="TitleLoginActivity">Welcome to FChat</string>
+    <string name="LoginButton">Войти</string>
+    <string name="RegButton">Создать аккаунт</string>
+    <string name="LoginRegistartion">Создать аккаунт</string>
+    <string name="LoginResetPassword">Не можете войти?</string>
+    <string name="Registration">Создание аккаунта</string>
+    <string name="ResetPasswordTitle">Забыли пароль?</string>
+    <string name="RegistartionEmail">Email</string>
+    <string name="RegistartionPassword">Password</string>
+    <string name="RegistartionName">Name</string>
+    <string name="RegistartionSurname">Surname</string>
+    <string name="RegistartionAge">Age</string>
+    <string name="ResetMail">Email</string>
+    <string name="LogOut">Выйти</string>
+    <string name="ResetSendMail">Отправить</string>
+    <string name="ChatHintMessege">Сообщение</string>
+</resources>
