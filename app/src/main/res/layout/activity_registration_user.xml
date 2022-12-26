@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.RegistrationUserActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/LoginTitleActivity"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/dolomanpavljenko"
+            android:text="@string/Registration"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/LoginUserEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="15dp"
+            android:autofillHints=""
+            android:hint="@string/RegistartionEmail"
+            android:fontFamily="@font/dolomanpavljenko"
+            android:inputType="textEmailAddress"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColorHint="#78909C"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LoginTitleActivity" />
+
+        <EditText
+            android:id="@+id/LoginUserPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/dolomanpavljenko"
+            android:layout_marginEnd="15dp"
+            android:autofillHints=""
+            android:hint="@string/RegistartionPassword"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColorHint="#78909C"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LoginUserEmail" />
+
+        <EditText
+            android:id="@+id/RegistartionName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:hint="@string/RegistartionName"
+            android:autofillHints="name"
+            android:fontFamily="@font/dolomanpavljenko"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColorHint="#78909C"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LoginUserPassword"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/RegistartionSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:hint="@string/RegistartionSurname"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColorHint="#78909C"
+            android:textSize="30sp"
+            android:fontFamily="@font/dolomanpavljenko"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RegistartionName"
+            android:autofillHints="username" />
+
+        <EditText
+            android:id="@+id/RegistartionAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:hint="@string/RegistartionAge"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColorHint="#78909C"
+            android:textSize="30sp"
+            android:fontFamily="@font/dolomanpavljenko"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RegistartionSurname" />
+
+        <Button
+            android:id="@+id/LoginRegButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:padding="7dp"
+            android:text="@string/RegButton"
+            android:textSize="30sp"
+            android:fontFamily="@font/dolomanpavljenko"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RegistartionAge" />
+
+        <ImageView
+            android:id="@+id/RegImageView2"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/registry" />
+
+
+    </LinearLayout>
+</ScrollView>

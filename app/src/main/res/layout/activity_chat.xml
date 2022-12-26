@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/char_bg_image"
+    tools:context=".ui.ChatActivity">
+
+    <TextView
+        android:id="@+id/tvChatTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.6"
+        android:background="@color/white"
+        android:fontFamily="@font/dolomanpavljenko"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Mike MIke" />
+
+    <View
+        android:id="@+id/ViewStatus"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvChatTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvChatTitle"
+        tools:background="@drawable/circle_green" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMesseges"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/tvChatTitle"
+        tools:listitem="@layout/my_messege_item" />
+
+    <EditText
+        android:id="@+id/editTextInChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.6"
+        android:background="@color/white"
+        android:hint="@string/ChatHintMessege"
+        android:inputType="textMultiLine"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="40dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:text="long message long message long message long message long message long message long message" />
+
+    <ImageView
+        android:id="@+id/imageViewSend"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextInChat"
+        app:layout_constraintTop_toTopOf="@+id/editTextInChat"
+        app:srcCompat="@drawable/sent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

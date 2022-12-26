@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ui.LoginActivity"
+    >
+
+
+    <TextView
+        android:id="@+id/LoginTitleActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dolomanpavljenko"
+        android:text="@string/TitleLoginActivity"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="45sp"
+        android:layout_marginTop="60dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogin" />
+
+
+    <EditText
+        android:id="@+id/LoginUserEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:fontFamily="@font/dolomanpavljenko"
+        android:hint="@string/email"
+        android:autofillHints="emailAddress"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:padding="8dp"
+        android:layout_marginTop="25dp"
+        android:textAlignment="center"
+        android:textColorHint="#78909C"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/LoginTitleActivity"
+
+        />
+
+    <EditText
+        android:id="@+id/LoginUserPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:inputType="textPassword"
+        android:fontFamily="@font/dolomanpavljenko"
+        android:hint="@string/password"
+        android:autofillHints="password"
+        android:padding="8dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:textAlignment="center"
+        android:textColorHint="#78909C"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/LoginUserEmail"
+         />
+
+    <Button
+        android:id="@+id/LoginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dolomanpavljenko"
+        android:text="@string/LoginButton"
+        android:textSize="30sp"
+        android:layout_marginLeft="30dp"
+        android:padding="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginUserPassword" />
+
+    <ImageView
+        android:id="@+id/imageViewLogin"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/titleofapp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/conversation" />
+
+    <TextView
+        android:id="@+id/LoginTextViewRegistration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/LoginRegistartion"
+        android:textStyle="italic"
+        android:textColor="@color/black"
+        android:fontFamily="@font/dolomanpavljenko"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginTextViewResetPassword" />
+
+    <TextView
+        android:id="@+id/LoginTextViewResetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/LoginResetPassword"
+        android:textSize="25sp"
+        android:textStyle="italic"
+        android:textColor="@color/black"
+        android:fontFamily="@font/dolomanpavljenko"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
