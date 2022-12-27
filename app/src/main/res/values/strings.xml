@@ -16,4 +16,7 @@
     <string name="LogOut">Выйти</string>
     <string name="ResetSendMail">Отправить</string>
     <string name="ChatHintMessege">Сообщение</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="titleofapp">titleofapp</string>
 </resources>
