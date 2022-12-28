@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/other_messege_bg"
-        android:maxWidth="300dp"
+        android:maxWidth="350dp"
         android:padding="8dp"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"

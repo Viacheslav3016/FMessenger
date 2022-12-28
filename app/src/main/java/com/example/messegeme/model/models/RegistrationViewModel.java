@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RegistartionViewModel extends ViewModel {
+public class RegistrationViewModel extends ViewModel {
 
     private final FirebaseDatabase database = FirebaseDatabase.getInstance();
     private final DatabaseReference myRef = database.getReference("User");
@@ -24,7 +24,7 @@ public class RegistartionViewModel extends ViewModel {
     private MutableLiveData<String> mutableLiveDataErrors = new MutableLiveData<>();
     private MutableLiveData<FirebaseUser> mutableLiveDataUsers = new MutableLiveData<>();
 
-    public RegistartionViewModel() {
+    public RegistrationViewModel() {
         auth = FirebaseAuth.getInstance();
         auth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
             @Override

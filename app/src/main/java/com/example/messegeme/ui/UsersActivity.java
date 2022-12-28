@@ -25,9 +25,7 @@ public class UsersActivity extends AppCompatActivity {
     private UserViewModel viewModel;
     private RecyclerView rvUsers;
     private UserAdapter userAdapter;
-    private String currentIdUSer;
-
-
+    private String currentIdUser;
 
     private void InitViews(){
         rvUsers = findViewById(R.id.rvUsers);
@@ -39,14 +37,14 @@ public class UsersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users);
-        currentIdUSer = getIntent().getStringExtra(EXTRA_CURRENT_ID);
+        currentIdUser = getIntent().getStringExtra(EXTRA_CURRENT_ID);
         InitViews();
         viewModel = new ViewModelProvider(this).get(UserViewModel.class);
         observeViewModel();
         userAdapter.setOnUserClickListener(new UserAdapter.OnUserClickListener() {
             @Override
             public void onUserClick(User user) {
-                Intent intent = ChatActivity.newIntent(UsersActivity.this,currentIdUSer, user.getId());
+                Intent intent = ChatActivity.newIntent(UsersActivity.this, currentIdUser, user.getId());
                 startActivity(intent);
             }
         });

@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.messegeme.R;
-import com.example.messegeme.model.models.RegistartionViewModel;
+import com.example.messegeme.model.models.RegistrationViewModel;
 import com.google.firebase.auth.FirebaseUser;
 
 public class RegistrationUserActivity extends AppCompatActivity {
@@ -25,14 +25,14 @@ public class RegistrationUserActivity extends AppCompatActivity {
     private EditText RegistartionAge;
     private Button LoginRegButton;
 
-    private RegistartionViewModel viewModel;
+    private RegistrationViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_user);
         InitViews();
-        viewModel = new ViewModelProvider(this).get(RegistartionViewModel.class);
+        viewModel = new ViewModelProvider(this).get(RegistrationViewModel.class);
         LoginRegButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

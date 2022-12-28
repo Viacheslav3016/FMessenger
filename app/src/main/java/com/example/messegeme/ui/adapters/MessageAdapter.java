@@ -50,7 +50,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessegeV
     @Override
     public void onBindViewHolder(@NonNull MessegeViewHolder holder, int position) {
         Message message = messages.get(position);
-        holder.tvMessege.setText(message.getText().toString());
+        holder.tvMessege.setText(message.getText());
     }
 
     @Override

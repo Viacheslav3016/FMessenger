@@ -7,11 +7,11 @@
     android:padding="10dp">
 
     <TextView
-        android:id="@+id/tvMyMessege"
+        android:id="@+id/tvMessege"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/mym_messege_bg"
-        android:maxWidth="250dp"
+        android:maxWidth="300dp"
         android:alpha="0.8"
         android:padding="8dp"
         android:textSize="20sp"
