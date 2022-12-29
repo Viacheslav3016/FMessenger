@@ -1,12 +1,15 @@
 package com.example.messegeme.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -18,6 +21,7 @@ import com.example.messegeme.model.Message;
 import com.example.messegeme.model.User;
 import com.example.messegeme.model.models.ChatViewModel;
 import com.example.messegeme.model.models.ChatViewModelFactory;
+import com.example.messegeme.model.models.UserViewModel;
 import com.example.messegeme.ui.adapters.MessageAdapter;
 import com.example.messegeme.R;
 
@@ -36,22 +40,28 @@ public class ChatActivity extends AppCompatActivity {
     private String otherIdUser;
     private MessageAdapter messegeAdapter;
 
+    private UserViewModel userViewModel;
     private ChatViewModel viewModel;
     private ChatViewModelFactory viewModelFactory;
+    private MediaPlayer sendSound;
+    private MediaPlayer recievedSound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         InitView();
+        InitSound();
         currentIdUser = getIntent().getStringExtra(EXTRA_CURRENT_ID);
         otherIdUser = getIntent().getStringExtra(EXTRA_OTHER_ID);
         viewModelFactory = new ChatViewModelFactory(currentIdUser, otherIdUser);
         viewModel = new ViewModelProvider(this, viewModelFactory).get(ChatViewModel.class);
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         messegeAdapter = new MessageAdapter(currentIdUser);
         List<Message> messages = new ArrayList<>();
         rvMesseges.setAdapter(messegeAdapter);
         observeViewModel();
+
         imageViewSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +72,7 @@ public class ChatActivity extends AppCompatActivity {
                         currentIdUser,
                         otherIdUser);
                 viewModel.sendMessage(message);
+                sendSound.start();
             }
         });
     }
@@ -85,6 +96,7 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onChanged(Boolean send) {
                 if (send) {
+                    recievedSound.start();
                     editTextInChat.setText("");
                 }
             }
@@ -94,8 +106,29 @@ public class ChatActivity extends AppCompatActivity {
             public void onChanged(User user) {
                 String userInfo = String.format("%s %s", user.getName(), user.getSurname());
                 tvChatTitle.setText(userInfo);
+                int bgResId;
+                if (user.getOnline()){
+                    bgResId =  R.drawable.circle_green;
+                }else{
+                    bgResId =  R.drawable.circle_red;
+                }
+                Drawable bg = ContextCompat.getDrawable(ChatActivity.this, bgResId);
+                ViewStatus.setBackground(bg);
+
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        userViewModel.setUserStatus(true);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        userViewModel.setUserStatus(false);
     }
 
     static Intent newIntent(Context context, String currentIdUSer, String otherIdUser) {
@@ -105,7 +138,10 @@ public class ChatActivity extends AppCompatActivity {
         return intent;
 
     }
-
+    private void InitSound(){
+        sendSound = MediaPlayer.create(this, R.raw.sendmessege);
+        recievedSound = MediaPlayer.create(this, R.raw.recievedmessege);
+    }
     private void InitView() {
         tvChatTitle = findViewById(R.id.tvChatTitle);
         ViewStatus = findViewById(R.id.ViewStatus);

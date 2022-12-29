@@ -38,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/editTextInChat"
         app:layout_constraintTop_toBottomOf="@+id/tvChatTitle"
         tools:listitem="@layout/my_messege_item" />
 
@@ -48,6 +49,8 @@
         android:alpha="0.6"
         android:background="@color/white"
         android:hint="@string/ChatHintMessege"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
         android:inputType="textMultiLine"
         android:paddingStart="16dp"
         android:paddingTop="16dp"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Messege me</string>
+    <string name="app_name">Message me</string>
     <string name="TitleLoginActivity">Welcome to FChat</string>
     <string name="LoginButton">Войти</string>
     <string name="RegButton">Создать аккаунт</string>

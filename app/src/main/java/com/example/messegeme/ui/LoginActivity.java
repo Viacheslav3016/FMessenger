@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView LoginTextViewRegistration;
     private TextView LoginTextViewResetPassword;
     private LoginViewModel viewModel;
+    private MediaPlayer welcomeSound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
         setUpOnClickListener();
         observeViewModel();
+
     }
 
     private void setUpOnClickListener(){
@@ -93,6 +96,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void InitViews(){
+        welcomeSound = MediaPlayer.create(this, R.raw.welcomemessege);
         LoginButton = findViewById(R.id.LoginButton);
         LoginUserEmail = findViewById(R.id.LoginUserEmail);
         LoginUserPassword = findViewById(R.id.LoginUserPassword);
